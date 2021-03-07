@@ -35,7 +35,7 @@ public class PageUiTest {
     }
 
     @Test
-    void shouldSubmitComplexRequest() {
+    void shouldSubmitRequestAlternative() {
         open("http://localhost:9999/");
         $("[data-test-id=city] .input__control").setValue("Мо");
         $$(".menu-item__control").findBy(text("Москва")).click();
