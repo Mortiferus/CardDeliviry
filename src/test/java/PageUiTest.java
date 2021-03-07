@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Condition.*;
 public class PageUiTest {
 
     @NotNull
-    private String when(boolean trim) {
+    private String whenCalendar(boolean isWhenCalendarTrim) {
         Calendar cl = new GregorianCalendar();
         cl.add(Calendar.DATE, 7);
-        if (trim) {
+        if (isWhenCalendarTrim) {
             return new SimpleDateFormat("d").format(cl.getTime());
         } else {
             return new SimpleDateFormat("dd.MM.yyyy").format(cl.getTime());
