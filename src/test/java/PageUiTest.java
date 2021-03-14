@@ -26,12 +26,12 @@ public class PageUiTest {
     void shouldSubmitRequest() {
         open("http://localhost:9999/");
         $("[data-test-id=city] .input__control").setValue("Москва");
-        $("[data-test-id=date] [placeholder=\"Дата встречи\"]").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE, when(false));
+        $("[data-test-id=date] [placeholder=\"Дата встречи\"]").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE, whenCalendar(false));
         $("[data-test-id=name] [name=name]").setValue("Альберт Эйнштейн");
         $("[data-test-id=phone] [name=phone]").setValue("+14318791955");
         $("[data-test-id=agreement]>.checkbox__box").click();
         $("button>.button__content").click();
-        $("[data-test-id=notification]").waitUntil(visible, 15000).shouldHave(exactText("Успешно! Встреча успешно забронирована на " + when(false)));
+        $("[data-test-id=notification]").waitUntil(visible, 15000).shouldHave(exactText("Успешно! Встреча успешно забронирована на " + whenCalendar(false)));
     }
 
     @Test
@@ -45,6 +45,6 @@ public class PageUiTest {
         $("[data-test-id=phone] [name=phone]").setValue("+14318791955");
         $("[data-test-id=agreement]>.checkbox__box").click();
         $("button>.button__content").click();
-        $("[data-test-id=notification]").waitUntil(visible, 15000).shouldHave(exactText("Успешно! Встреча успешно забронирована на " + when(false)));
+        $("[data-test-id=notification]").waitUntil(visible, 15000).shouldHave(exactText("Успешно! Встреча успешно забронирована на " + whenCalendar(false)));
     }
 }
